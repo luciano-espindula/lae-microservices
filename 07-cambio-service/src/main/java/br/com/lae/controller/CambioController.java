@@ -35,7 +35,6 @@ public class CambioController {
 			@PathVariable("to") String to) {
 		
 		var cambio = repository.findByFromAndTo(from, to);
-		
 		if (cambio == null) throw new RuntimeException("Currency Unsupported"); 
 		
 		var port = environment.getProperty("local.server.port");
